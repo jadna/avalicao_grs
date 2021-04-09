@@ -70,7 +70,7 @@
         <div class="col-sm-6 mx-auto">
           <p style="text-align:center">Ou pode clicar no botão abaixo que a sua localização já será preenchida automaticamente (só precisa permitir no pop-up).</p>
           <div class="d-flex justify-content-center">
-            <button id="btn" type="button" class="btn btn-dark" onclick="getLocation()">Localização</button>
+            <button id="btn" type="button" class="btn btn-dark" onclick="getLocation()">Clique aqui para obter sua latitude e longitude</button>
           </div>
         </div>
 
@@ -101,7 +101,7 @@
             <div id="errorlabel" class="alert alert-danger display-error" style="display: none"></div>
             
             <div class="d-grid gap-2 ">
-              <button name="submit" id="submit" type="submit" class="btn btn-dark">Enviar</button>
+              <button name="submit" id="submit" type="submit" class="btn btn-dark">Iniciar</button>
             </div> 
           </div>
         </form>
