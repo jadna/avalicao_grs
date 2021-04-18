@@ -3,8 +3,8 @@
     include("conexao.php");
     if (!isset($_SESSION)) session_start();
 
-    /*print("<pre>".print_r($_SESSION,true)."</pre>");
-    print("<pre>".print_r($_POST,true)."</pre>");*/
+    //print("<pre>".print_r($_SESSION,true)."</pre>");
+    //print("<pre>".print_r($_POST,true)."</pre>");
     $aux = 0;
 
     for($i=1; $i<=count($_POST); $i++){
@@ -15,6 +15,12 @@
             $dados[$aux]['rating'] = $_POST['rating'.$i];
             $aux++;     
         }  
+    }
+
+    if(!$dados){
+        echo"<script language='javascript' type='text/javascript'>
+        alert('Você não avaliou nenhum ponto de interesse!');window.location
+        .href='avaliacao.php';</script>";
     }
 
     //print("<pre>".print_r($dados,true)."</pre>");
@@ -48,6 +54,5 @@
             .href='avaliacao.php';</script>";
         echo "Error: " . $sql . "<br>" . mysqli_error($mysqli);
     }
-
 
 ?>

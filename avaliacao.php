@@ -61,12 +61,12 @@
         
         <!-- CORPO -->
         <div class="col-sm-6 mx-auto">
-          <h1 style="text-align:center">Olá, seja bem-vindo(a)</h1>
-          <p style="text-align:center">Este sistema é um experimento para o desenvolvimento do meu Mestrado em Ciência da Computação. Para mais informações</p>
-          
-          <div class="d-flex justify-content-center">
-            <button type="button" class="btn btn-outline-dark" onclick="instrucoes();">Leia as instruções</button>
-          </div>
+            <h1 style="text-align:center">Instruções de Avaliação</h1>
+            <p style="text-align:center">
+                Dê a nota a pelo menos 10 pontos de interesse.</br>
+                Avalie apenas os pontos de interesse que você já frequentou ou conhecer, atribuindo uma nota de 1 a 5, sendo 1 gostou pouco e 5 gostou muito.
+
+            </p>
         </div>
 
         <div class="dropdown-divider" ></div>
