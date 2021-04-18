@@ -36,7 +36,7 @@
         <link rel="stylesheet" href="style.css">
         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css"/>
         <!-- Bootstrap core CSS -->
-        <link href="../assets/dist/css/bootstrap.min.css" rel="stylesheet">
+        <!--link href="../assets/dist/css/bootstrap.min.css" rel="stylesheet"-->
         <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-eOJMYsd53ii+scO/bJGFsiCZc+5NDVN2yr8+0RDqr0Ql0h+rP48ckxlpbzKgwra6" crossorigin="anonymous">
         <link href="navbar.css" rel="stylesheet">
 
@@ -63,8 +63,8 @@
         <div class="col-sm-6 mx-auto">
             <h1 style="text-align:center">Instruções de Avaliação</h1>
             <p style="text-align:center">
-                Dê a nota a pelo menos 10 pontos de interesse.</br>
-                Avalie apenas os pontos de interesse que você já frequentou ou conhecer, atribuindo uma nota de 1 a 5, sendo 1 gostou pouco e 5 gostou muito.
+                Dê a nota em pelo menos 10 pontos de interesse.</br>
+                Avalie apenas os pontos de interesse que você já frequentou e/ou conhece, atribuindo uma nota de 1 a 5, sendo 1 gostou pouco e 5 gostou muito.
 
             </p>
         </div>
