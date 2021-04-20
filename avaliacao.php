@@ -2,7 +2,8 @@
     session_start();
     require('conexao.php');
 
-    $query = "SELECT * FROM pois ORDER BY RAND() LIMIT 30";
+    //$query = "SELECT * FROM pois ORDER BY RAND() LIMIT 50";
+    $query = "SELECT * FROM pois";
 
     $result = $mysqli->query($query);
     //var_dump($result->num_rows);
@@ -63,7 +64,7 @@
         <div class="col-sm-6 mx-auto">
             <h1 style="text-align:center">Instruções de Avaliação</h1>
             <p style="text-align:center">
-                Dê a nota em pelo menos 10 pontos de interesse.</br>
+                Esta seleção possui 50 pontos de interesse. Dê a nota em pelo menos 10 pontos de interesse.</br>
                 Avalie apenas os pontos de interesse que você já frequentou e/ou conhece, atribuindo uma nota de 1 a 5, sendo 1 gostou pouco e 5 gostou muito.
 
             </p>
@@ -84,6 +85,7 @@
                         if($rowCount % $numOfCols == 0) { ?> <div class="row" style="margin-bottom: 25px"> <?php } 
                         $rowCount++;
                         $radio_button = "button".$rowCount;
+                        $type = "type".$rowCount;
                         $poiId = "poiId".$rowCount;
                         $rating = "rating".$rowCount;
                         $div_id = "div".$rowCount;
@@ -91,6 +93,40 @@
                         <div id="div_ratings" class="col-md-<?php echo $bootstrapColWidth; ?>">
                             <div class="wrapper">
                                 <h5 for=<?=$radio_button?> style="text-align:center"> <?=$poi['name']?></h5>
+                                <?php 
+                                    if ($poi['preference'] == "art_gallery"){
+                                        $preference = "Galeria de Arte";
+                                    } elseif ($poi['preference'] == "bakery"){
+                                        $preference = "Padaria";
+                                    } elseif ($poi['preference'] == "bar"){
+                                        $preference = "Bar";
+                                    } elseif ($poi['preference'] == "beach"){
+                                        $preference = "Praia";
+                                    } elseif ($poi['preference'] == "cafe"){
+                                        $preference = "Cafeteria";
+                                    } elseif ($poi['preference'] == "fast-food"){
+                                        $preference = "Fast-food";
+                                    } elseif ($poi['preference'] == "movie_theater"){
+                                        $preference = "Cinema";
+                                    } elseif ($poi['preference'] == "museum"){
+                                        $preference = "Museu";
+                                    } elseif ($poi['preference'] == "night_club"){
+                                        $preference = "Casa Nortuna (Boate)";
+                                    } elseif ($poi['preference'] == "park"){
+                                        $preference = "Praça";
+                                    } elseif ($poi['preference'] == "restaurant"){
+                                        $preference = "Restaurante";
+                                    } elseif ($poi['preference'] == "shopping_mall"){
+                                        $preference = "Shopping";
+                                    } elseif ($poi['preference'] == "stadium"){
+                                        $preference = "Estádio";
+                                    } elseif ($poi['preference'] == "tourist_attraction"){
+                                        $preference = "Atração Turística";
+                                    } elseif ($poi['preference'] == "zoo"){
+                                        $preference = "Zoológico";
+                                    }     
+                                ?>
+                                <label for=<?=$type?>>Tipo: <?=$preference?></label><br/>
                                 <label for=<?=$radio_button?>>Endereço: <?=$poi['endereco']?></label><br/>
                                 <div id=<?=$div_id?> class="btn-toolbar" role="toolbar" aria-label="Toolbar with button groups" style="margin-top: 15px; margin-left: 85px; margin-bottom: 10px;" center>
                                     <!--div class="btn-group mr-2" role="group" aria-label="First group"-->
