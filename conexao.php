@@ -1,5 +1,13 @@
 <?php
-    $mysqli = mysqli_connect("localhost", "root", "", "avaliacao_grs");
+
+    //mysql://bc9f1bb91881e9:20028330@us-cdbr-east-03.cleardb.com/heroku_05eab3fa1dd0708?reconnect=true
+    $servidor = "us-cdbr-east-03.cleardb.com";
+    $usuario = "bc9f1bb91881e9";
+    $senha = "20028330";
+    $dbname = "heroku_05eab3fa1dd0708"; 
+
+    $mysqli = mysqli_connect($servidor, $usuario, $senha, $dbname);
+    //$mysqli = mysqli_connect("localhost", "root", "", "avaliacao_grs");
     
     if (!$mysqli) {
         echo "Error: Falha ao conectar-se com o banco de dados MySQL." . PHP_EOL;
