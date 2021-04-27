@@ -50,7 +50,7 @@
     if ($resultado) {
         $msg = "Avaliação salva com sucesso.\nObrigada pela sua participação!\nEntraremos em contato para a próxima etapa da avaliação.";
         echo"<script language='javascript' type='text/javascript'>
-            alert('".$msg."');window.location
+            alert('Avaliação salva com sucesso. Obrigada pela sua participação! Entraremos em contato para a próxima etapa da avaliação.');window.location
             .href='index.php';</script>";
         
         //echo json_encode(['code'=>200, 'msg'=>$msg]);
