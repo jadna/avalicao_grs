@@ -40,14 +40,40 @@
         <!--link href="../assets/dist/css/bootstrap.min.css" rel="stylesheet"-->
         <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-eOJMYsd53ii+scO/bJGFsiCZc+5NDVN2yr8+0RDqr0Ql0h+rP48ckxlpbzKgwra6" crossorigin="anonymous">
         <link href="navbar.css" rel="stylesheet">
+        <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.css" rel="stylesheet" />
+
 
         <style>
             .medio {
                 width: 50%;
                 margin-left: 400px;
+            }        
+            .range-wrap {
+                position: relative;
+                margin: 0 auto 3rem;
             }
-        </style>
-        
+            .range {
+                width: 100%;
+            }
+            .bubble {
+                background: red;
+                color: white;
+                padding: 4px 12px;
+                position: absolute;
+                border-radius: 4px;
+                left: 50%;
+                transform: translateX(-50%);
+            }
+            .bubble::after {
+                content: "";
+                position: absolute;
+                width: 2px;
+                height: 2px;
+                background: red;
+                top: -1px;
+                left: 50%;
+            }         
+        </style>     
     </head>
 
     <body>
@@ -74,78 +100,35 @@
         
         <div class="container-fluid">
             <div class="p-5 rounded justify-content-center">
-                <form method="POST" action="rating.php">
+                <form id="avaliacao" method="POST" action="rating.php">
                 <?php
                     //Columns must be a factor of 12 (1,2,3,4,6,12)
                     $numOfCols = 3;
                     $rowCount = 0;
                     $bootstrapColWidth = 12 / $numOfCols;
                     foreach ($pois as $poi){
-                        //var_dump($poi);
-                        if($rowCount % $numOfCols == 0) { ?> <div class="row" style="margin-bottom: 25px"> <?php } 
+                        if($rowCount % $numOfCols == 0) { 
+                ?> <div class="row" style="margin-bottom: 25px"> 
+                <?php   } //Fecha o if
                         $rowCount++;
-                        $radio_button = "button".$rowCount;
-                        $type = "type".$rowCount;
+                        $nameinput = "rating".$rowCount;
                         $poiId = "poiId".$rowCount;
-                        $rating = "rating".$rowCount;
-                        $div_id = "div".$rowCount;
+                        $label = 'label'.$rowCount;
+
                 ?>                       
                         <div id="div_ratings" class="col-md-<?php echo $bootstrapColWidth; ?>">
-                            <div class="wrapper">
-                                <h5 for=<?=$radio_button?> style="text-align:center"> <?=$poi['name']?></h5>
-                                <?php 
-                                    if ($poi['preference'] == "art_gallery"){
-                                        $preference = "Galeria de Arte";
-                                    } elseif ($poi['preference'] == "bakery"){
-                                        $preference = "Padaria";
-                                    } elseif ($poi['preference'] == "bar"){
-                                        $preference = "Bar";
-                                    } elseif ($poi['preference'] == "beach"){
-                                        $preference = "Praia";
-                                    } elseif ($poi['preference'] == "cafe"){
-                                        $preference = "Cafeteria";
-                                    } elseif ($poi['preference'] == "fast-food"){
-                                        $preference = "Fast-food";
-                                    } elseif ($poi['preference'] == "movie_theater"){
-                                        $preference = "Cinema";
-                                    } elseif ($poi['preference'] == "museum"){
-                                        $preference = "Museu";
-                                    } elseif ($poi['preference'] == "night_club"){
-                                        $preference = "Casa Nortuna (Boate)";
-                                    } elseif ($poi['preference'] == "park"){
-                                        $preference = "Praça";
-                                    } elseif ($poi['preference'] == "restaurant"){
-                                        $preference = "Restaurante";
-                                    } elseif ($poi['preference'] == "shopping_mall"){
-                                        $preference = "Shopping";
-                                    } elseif ($poi['preference'] == "stadium"){
-                                        $preference = "Estádio";
-                                    } elseif ($poi['preference'] == "tourist_attraction"){
-                                        $preference = "Atração Turística";
-                                    } elseif ($poi['preference'] == "zoo"){
-                                        $preference = "Zoológico";
-                                    }     
-                                ?>
-                                <label for=<?=$type?>>Tipo: <?=$preference?></label><br/>
-                                <label for=<?=$radio_button?>>Endereço: <?=$poi['endereco']?></label><br/>
-                                <div id=<?=$div_id?> class="btn-toolbar" role="toolbar" aria-label="Toolbar with button groups" style="margin-top: 15px; margin-left: 85px; margin-bottom: 10px;" center>
-                                    <!--div class="btn-group mr-2" role="group" aria-label="First group"-->
-                                        <button onclick="update(this.value, <?=$poi['poiId']?>, <?=$rowCount?>);" id=<?=$radio_button?> name=<?=$radio_button?> value="1" type="button" class="btn btn-outline-dark" data-toggle="button">1</button>
-                                        <button onclick="update(this.value, <?=$poi['poiId']?>, <?=$rowCount?>);" id=<?=$radio_button?> name=<?=$radio_button?> value="2" type="button" class="btn btn-outline-dark">2</button>
-                                        <button onclick="update(this.value, <?=$poi['poiId']?>, <?=$rowCount?>);" id=<?=$radio_button?> name=<?=$radio_button?> value="3" type="button" class="btn btn-outline-dark">3</button>
-                                        <button onclick="update(this.value, <?=$poi['poiId']?>, <?=$rowCount?>);" id=<?=$radio_button?> name=<?=$radio_button?> value="4" type="button" class="btn btn-outline-dark">4</button>
-                                        <button onclick="update(this.value, <?=$poi['poiId']?>, <?=$rowCount?>);" id=<?=$radio_button?> name=<?=$radio_button?> value="5" type="button" class="btn btn-outline-dark">5</button>
-                                    <!--/div-->
-                                </div>
-                                <input type="hidden" name=<?=$poiId?> id=<?=$poiId?> value=<?=$poi['poiId'];?>>
-                                <input type="hidden" name=<?=$rating?> id=<?=$rating?>>
-                                    
-                                <div class="footer">
-                                    <span class="text"></span>
-                                    <span class="numb"></span>
-                                </div>
+                           
+                            <h5 style="text-align:center"> <?=$poi['name']?></h5> 
+                            <label>Tipo: <?=$poi['preference']?></label><br/>
+                            <label>Endereço: <?=$poi['endereco']?></label><br/>
+
+                            <div class="range-wrap"  style="width: 55%;">
+                                    <input type="range" class="range" min="0" max="5" step="1" value="0" id=<?=$nameinput?> name=<?=$nameinput?> onclick="getIdPoi(this.value, <?=$poi['poiId']?>, <?=$rowCount?>);">
+                                    <output class="bubble" style="margin-top:20px;"></output>
                             </div>
-                            <br>
+
+                            <input type="hidden" name=<?=$poiId?> id=<?=$poiId?>>
+
                         </div>
                     <?php
                         if($rowCount % $numOfCols == 0) { ?> 
@@ -153,13 +136,15 @@
                     <?php } 
                     } 
                     ?>
-                    <button id="avaliar" type="submit" class="btn btn-dark btn-lg btn-block medio">Avaliar</button>
+                    <button name="avaliar" id="avaliar" type="submit" class="btn btn-dark btn-lg btn-block medio">Avaliar</button>
                     <!--button type="submit" style="margin-left: 500px;" class="btn btn-dark btn-lg btn-block" id="salvar" name="salvar">Salvar</button-->
                     
                 </form>
 
             </div>
         </div>
+
+        
 
 
         <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta3/dist/js/bootstrap.bundle.min.js" integrity="sha384-JEW9xMcG8R+pH31jmWH6WWP0WintQrMb4s7ZOdauHnUtxwoG2vI5DkLtS3qm9Ekf" crossorigin="anonymous"></script>
@@ -168,27 +153,8 @@
         <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
         <script type="text/javascript">
     
-            /*const queryString = window.location.search;
-            const urlParams = new URLSearchParams(queryString);
-            const userId = urlParams.get('userId')
-            document.querySelector("[id='userId']").value = userId;
-            console.log(userId);*/
-
-            function update(val, poi, idInput) {
-
-                /** PEGA O EVENTO PELO ID DA DIV DEPOIS PEGA O VALOR DO BUTTON CLICADO E SETA NA VARIAVEL ESCONDIDA */
-
-                var div = "#div"+idInput;
-                $(div).on('click', 'button', function(event) {
-                    console.log($(this).text())
-                    var value = $(this).val();
-                    var name_input = "rating"+idInput;
-                    document.getElementById(name_input).value = value;
-                    console.log(document.getElementById(name_input).value);
-
-                });
-
-               
+            function getIdPoi(val, poi, idInput) {
+              
                 if(val != 0){
                     var id = "poiId"+idInput;
                     document.getElementById(id).value = poi;
@@ -199,6 +165,63 @@
                  
                 }                
             }   
+
+            const allRanges = document.querySelectorAll(".range-wrap");
+            allRanges.forEach(wrap => {
+                const range = wrap.querySelector(".range");
+                const bubble = wrap.querySelector(".bubble");
+
+                range.addEventListener("input", () => {
+                    setBubble(range, bubble);
+                });
+                setBubble(range, bubble);
+            });
+
+            function setBubble(range, bubble) {
+                console.log(range);
+                console.log(bubble);
+                const val = range.value;
+                const min = range.min ? range.min : 0;
+                const max = range.max ? range.max : 100;
+                const newVal = Number(((val - min) * 100) / (max - min));
+                bubble.innerHTML = "Nota: "+val;
+
+                // Sorta magic numbers based on size of the native UI thumb
+                bubble.style.left = `calc(${newVal}% + (${8 - newVal * 0.15}px))`;
+            }
+            
+            $("#avaliacao").submit(function() {
+
+                var dados = jQuery(this).serialize();
+                console.log(dados);
+                var confirmacao = confirm("Por favor, confirme a avaliação!")
+                console.log(confirmacao);
+                if (confirmacao == true){
+
+                    $.ajax({
+                        type: "POST",
+                        url: "rating.php",
+                        dataType: "json",
+                        data: dados,
+                        success : function(data){
+                            console.log(data)
+                            if (data.code == "200"){
+                                alert(data.msg);
+                                window.location.href='index.php';
+                            }else if(data.code == "402"){
+                                alert(data.msg);
+                            }else{
+                                alert(data.msg);
+
+                            }
+                        }
+                    });
+                    return true;
+                } 
+                else return false;       
+            });
+               
+
         </script>
 
     </body>

@@ -48,7 +48,7 @@
                   <!-- INFORMA SOBRE O EXPERIMENTO-->
                   <div class="col-sm-6 mx-auto">
                         <h1 style="text-align:center">Olá, seja bem-vindo(a)</h1>
-                        <p style="text-align:center">
+                        <p style="text-align:justify">
                               Eu me chamo Jadna Almeida e sou aluna do curso de Mestrado do <a href="http://wiki.dcc.ufba.br/PGComp/">Programa de Pós-Graduação em Ciência da Computação (PGCOMP)</a> da <a href="http://wiki.dcc.ufba.br/DCC/">Universidade Federal da Bahia-UFBA</a>. 
                               Primeiramente, seja bem-vindo(a) e muito obrigado pela sua disponibilidade em participar deste experimento. 
                               Será uma satisfação te ter como voluntário, saiba que sua avaliação é muito importante.
@@ -60,7 +60,7 @@
                   <!-- INFORMA SOBRE O EXPERIMENTO-->
                   <div class="col-sm-6 mx-auto">
                         <h1 style="text-align:center">O que é o sistema</h1>
-                        <p style="text-align:center">
+                        <p style="text-align:justify">
                               Neste trabalho estamos desenvolvendo um Sistema de Recomendação de Pontos de Interesse (POI) para Grupos. 
                               Pontos de Interesse podem ser bares, restaurantes, museus, parques, monumentos, locais de atrações turísticas na cidade, praias, eventos, etc. <br/>
                               Tais recomendações se baseiam nas preferências dos grupos de usuários e sua localização geográfica, logo o objetivo mor é recomendar POIs que estejam geograficamente mais próximos do grupo que atendam seus interesses simultaneamente.
@@ -71,8 +71,8 @@
 
                   <!-- INFORMA SOBRE O EXPERIMENTO-->
                   <div class="col-sm-6 mx-auto">
-                        <h1 style="text-align:center">O que é o sistema</h1>
-                        <p style="text-align:center">
+                        <h1 style="text-align:center">Instruções</h1>
+                        <p style="text-align:justify">
                               <ol>
                                     <!--li style="text-align: justify;">Acesse o link <a href="#avaliacao">da avaliação</a> e cadastre seus dados pessoais, como nome e e-mail. Essas informações serão utilizadas para futuro contato. Após o experimento, essas informações serão apagadas da base de dados.</li-->
                                     <li style="text-align: justify;">Acesse a página <a href="index.php">da avaliação</a> e insira seu e-mail. Essas informações serão utilizadas para futuro contato. Após o experimento, essas informações serão apagadas da base de dados.</li>
@@ -92,7 +92,7 @@
                   <!-- INFORMA SOBRE O EXPERIMENTO-->
                   <div class="col-sm-6 mx-auto">
                         <h1 style="text-align:center">Caso tenha alguma dúvida</h1>
-                        <p style="text-align:center">
+                        <p style="text-align:justify">
                               Ou se algo não tenha ficado claro e/ou até mesmo se estiver enfrentando algum problema com o experimento, por favor entre em contato comigo <a href="mailto:jadna.ac@gmail.com">jadna.ac@gmail.com</a>.
                         </p>
                   </div>
