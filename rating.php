@@ -45,11 +45,11 @@
     }
 
     if ($resultado) {
-        /*echo"<script language='javascript' type='text/javascript'>
+        echo"<script language='javascript' type='text/javascript'>
             alert('Você finalizou a primeira parte do experimento: levantamento de preferências. Na segunda parte da avaliação você receberá um conjunto de recomendações para avaliação. Fique atento a seu e-mail. Entraremos em contato. Obrigado.');window.location
-            .href='index.php';</script>";*/
-        $msg = "Você finalizou a primeira parte do experimento: levantamento de preferências. Na segunda parte da avaliação você receberá um conjunto de recomendações para avaliação. Fique atento a seu e-mail. Entraremos em contato. Obrigado.";
-        echo json_encode(['code'=>200, 'msg'=>$msg]);
+            .href='index.php';</script>";
+        /*$msg = "Você finalizou a primeira parte do experimento: levantamento de preferências. Na segunda parte da avaliação você receberá um conjunto de recomendações para avaliação. Fique atento a seu e-mail. Entraremos em contato. Obrigado.";
+        echo json_encode(['code'=>200, 'msg'=>$msg]);*/
     } else {
 
         /*echo"<script language='javascript' type='text/javascript'>
