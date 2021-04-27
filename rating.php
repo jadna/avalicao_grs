@@ -48,11 +48,12 @@
     }
 
     if ($resultado) {
-        /*echo"<script language='javascript' type='text/javascript'>
-            alert('Avaliação salva com sucesso!');window.location
-            .href='index.php';</script>";*/
         $msg = "Avaliação salva com sucesso.\nObrigada pela sua participação!\nEntraremos em contato para a próxima etapa da avaliação.";
-        echo json_encode(['code'=>200, 'msg'=>$msg]);
+        echo"<script language='javascript' type='text/javascript'>
+            alert('".$msn."');window.location
+            .href='index.php';</script>";
+        
+        //echo json_encode(['code'=>200, 'msg'=>$msg]);
     } else {
 
         /*echo"<script language='javascript' type='text/javascript'>
