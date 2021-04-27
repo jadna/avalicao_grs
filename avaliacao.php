@@ -212,7 +212,7 @@
                                 alert(data.msg);
                             }else{
                                 alert(data.msg);
-
+                                window.location.href='index.php';
                             }
                         }
                     });
