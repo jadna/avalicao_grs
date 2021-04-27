@@ -49,11 +49,11 @@
 
     if ($resultado) {
         //$msg = "Avaliação salva com sucesso. Obrigada pela sua participação! Entraremos em contato para a próxima etapa da avaliação.";
-        /*echo"<script language='javascript' type='text/javascript'>
-            alert('Avaliação salva com sucesso. Obrigada pela sua participação! Entraremos em contato para a próxima etapa da avaliação.');window.location
-            .href='index.php';</script>";*/
-        $msg = "Você finalizou a primeira parte do experimento: levantamento de preferências. Na segunda parte da avaliação você receberá um conjunto de recomendações para avaliação. Fique atento a seu e-mail. Entraremos em contato. Obrigado.";
-        echo json_encode(['code'=>200, 'msg'=>$msg]);
+        echo"<script language='javascript' type='text/javascript'>
+            alert('Você finalizou a primeira parte do experimento: levantamento de preferências. Na segunda parte da avaliação você receberá um conjunto de recomendações para avaliação. Fique atento a seu e-mail. Entraremos em contato. Obrigado.');window.location
+            .href='index.php';</script>";
+        //$msg = "Você finalizou a primeira parte do experimento: levantamento de preferências. Na segunda parte da avaliação você receberá um conjunto de recomendações para avaliação. Fique atento a seu e-mail. Entraremos em contato. Obrigado.";
+        //echo json_encode(['code'=>200, 'msg'=>$msg]);
     } else {
 
         /*echo"<script language='javascript' type='text/javascript'>
