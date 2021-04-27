@@ -48,11 +48,11 @@
     }
 
     if ($resultado) {
-        $msg = "Avaliação salva com sucesso. Obrigada pela sua participação! Entraremos em contato para a próxima etapa da avaliação.";
+        //$msg = "Avaliação salva com sucesso. Obrigada pela sua participação! Entraremos em contato para a próxima etapa da avaliação.";
         /*echo"<script language='javascript' type='text/javascript'>
             alert('Avaliação salva com sucesso. Obrigada pela sua participação! Entraremos em contato para a próxima etapa da avaliação.');window.location
             .href='index.php';</script>";*/
-        
+        $msg = "Você finalizou a primeira parte do experimento: levantamento de preferências. Na segunda parte da avaliação você receberá um conjunto de recomendações para avaliação. Fique atento a seu e-mail. Entraremos em contato. Obrigado.";
         echo json_encode(['code'=>200, 'msg'=>$msg]);
     } else {
 
@@ -60,7 +60,8 @@
             alert('Erro ao salvar a avaliação');window.location
             .href='avaliacao.php';</script>";
         echo "Error: " . $sql . "<br>" . mysqli_error($mysqli);*/
-        $errorMSG = "Erro ao inserir os dados. Por favor tente novamente.\nError: " . $sql . "\n" . mysqli_error($mysqli);
+        //$errorMSG = "Erro ao inserir os dados. Por favor tente novamente. Error: " . $sql . "\n" . mysqli_error($mysqli);
+        $errorMSG = "Erro ao inserir os dados. Por favor tente novamente. Error: " . $sql;
         echo json_encode(['code'=>404, 'msg'=>$errorMSG]);
     }
 
