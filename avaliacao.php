@@ -123,11 +123,11 @@
                             <label>Endereço: <?=$poi['endereco']?></label><br/>
 
                             <div class="range-wrap"  style="width: 55%;">
-                                    <input type="range" class="range" min="0" max="5" step="1" value="0" id=<?=$nameinput?> name=<?=$nameinput?> onclick="getIdPoi(this.value, <?=$poi['poiId']?>, <?=$rowCount?>);">
+                                    <input type="range" class="range" min="0" max="5" step="1" value="0" id=<?=$nameinput?> name=<?=$nameinput?> >
                                     <output class="bubble" style="margin-top:20px;"></output>
                             </div>
 
-                            <input type="hidden" name=<?=$poiId?> id=<?=$poiId?>>
+                            <input type="hidden" name=<?=$poiId?> id=<?=$poiId?> value=<?=$poi['poiId']?>>
 
                         </div>
                     <?php
@@ -153,7 +153,9 @@
         <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
         <script type="text/javascript">
     
-            function getIdPoi(val, poi, idInput) {
+            /*function getIdPoi(val, poi, idInput) {
+
+                console.log(val);
               
                 if(val != 0){
                     var id = "poiId"+idInput;
@@ -161,10 +163,10 @@
 
                     /*var value_rating = "button"+idInput;
                     console.log(value_rating);
-                    var num = null;*/
+                    var num = null;
                  
                 }                
-            }   
+            } */  
 
             const allRanges = document.querySelectorAll(".range-wrap");
             allRanges.forEach(wrap => {
@@ -178,8 +180,7 @@
             });
 
             function setBubble(range, bubble) {
-                console.log(range);
-                console.log(bubble);
+
                 const val = range.value;
                 const min = range.min ? range.min : 0;
                 const max = range.max ? range.max : 100;

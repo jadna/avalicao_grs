@@ -22,9 +22,6 @@
         echo"<script language='javascript' type='text/javascript'>
         alert('Você não avaliou nenhum ponto de interesse!');window.location
         .href='avaliacao.php';</script>";
-
-        /*$msg = "Você não avaliou nenhum ponto de interesse!";
-        echo json_encode(['code'=>402, 'msg'=>$msg]);*/
     }
 
     //print("<pre>".print_r($dados,true)."</pre>"); die();
@@ -48,19 +45,17 @@
     }
 
     if ($resultado) {
-        //$msg = "Avaliação salva com sucesso. Obrigada pela sua participação! Entraremos em contato para a próxima etapa da avaliação.";
-        echo"<script language='javascript' type='text/javascript'>
+        /*echo"<script language='javascript' type='text/javascript'>
             alert('Você finalizou a primeira parte do experimento: levantamento de preferências. Na segunda parte da avaliação você receberá um conjunto de recomendações para avaliação. Fique atento a seu e-mail. Entraremos em contato. Obrigado.');window.location
-            .href='index.php';</script>";
-        //$msg = "Você finalizou a primeira parte do experimento: levantamento de preferências. Na segunda parte da avaliação você receberá um conjunto de recomendações para avaliação. Fique atento a seu e-mail. Entraremos em contato. Obrigado.";
-        //echo json_encode(['code'=>200, 'msg'=>$msg]);
+            .href='index.php';</script>";*/
+        $msg = "Você finalizou a primeira parte do experimento: levantamento de preferências. Na segunda parte da avaliação você receberá um conjunto de recomendações para avaliação. Fique atento a seu e-mail. Entraremos em contato. Obrigado.";
+        echo json_encode(['code'=>200, 'msg'=>$msg]);
     } else {
 
         /*echo"<script language='javascript' type='text/javascript'>
             alert('Erro ao salvar a avaliação');window.location
             .href='avaliacao.php';</script>";
         echo "Error: " . $sql . "<br>" . mysqli_error($mysqli);*/
-        //$errorMSG = "Erro ao inserir os dados. Por favor tente novamente. Error: " . $sql . "\n" . mysqli_error($mysqli);
         $errorMSG = "Erro ao inserir os dados. Por favor tente novamente. Error: " . $sql;
         echo json_encode(['code'=>404, 'msg'=>$errorMSG]);
     }
