@@ -80,7 +80,7 @@
                                     <li style="text-align: justify;">Após inserir o email e a coordenada, você será rederecionado(a) para a página de avaliações. Avalie pelo menos 10 pontos de interesse que você conheça e/ou já tenha visitado.<br/>
                                     Atribuindo notas de 1 a 5 (onde 1 indica que não gostou daquele local e 5 você gostou muito). Locais não visitados não precisam ser avaliados. 
                                     <BR/>APÓS AVALIAR OS PONTOS DE INTERESSE NÃO ESQUEÇA DE CLICAR EM "AVALIAR"!</li>
-                                    <!--li style="text-align: justify;">Após as coletas de dados, será criado grupos aleatórios de 3, 5 e 10 pessoas, então você e seu GRUPO receberá um e-mail com as recomendações de pontos de interesse a partir das informações providas nos itens 2 e 3.</li-->
+                                    <li style="text-align: justify;">Após as coletas de dados, serão feitas as recomendações, então você e seu GRUPO receberá um link com as recomendações de pontos de interesse onde terão que avaliar as recomendações geradas em grupo.</li>
                                     <!--li style="text-align: justify;">Para cada item de recomendação, avalie com notas de 1 a 5 (onde 1 indica que não gostou daquele local e 5 você gostou muito).</li>
                                     <li style="text-align: justify;">Após as coletas de dados, você receberá um e-mail  com as recomendações de pontos de interesse a partir das informações providas nos itens 3 e 4. Para cada item de recomendação, avalie com notas de 1 a 5 (onde 1 indica discorda totalmente, e 6 que concorda totalmente).</li-->
                               </ol>
