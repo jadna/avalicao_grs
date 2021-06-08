@@ -1,4 +1,5 @@
 <?php 
+    date_default_timezone_set('America/Bahia');
     session_start();
     include('conexao.php');
     
@@ -8,12 +9,14 @@
         $email = $_POST['email'];
         $latitude = $_POST['latitude'];
         $longitude = $_POST['longitude'];
+        $date = date("Y-m-d H:i:s");
 
-        $query = "SELECT userId, email, latitude, longitude 
+        $query = "SELECT userId, email, latitude, longitude, created
                     FROM users 
                     WHERE email LIKE '".$email."'".
                     " AND latitude LIKE '".$latitude."'".
-                    " AND longitude LIKE '".$longitude."'";
+                    " AND longitude LIKE '".$longitude."'".
+                    "AND created = '".$date."'";
 
         $result = $mysqli->query($query);
 
@@ -23,7 +26,8 @@
             echo json_encode(['code'=>404, 'msg'=>$errorMSG]);
         }else{
 
-           $sql = "INSERT INTO users (email, latitude, longitude) VALUES ('".$_POST['email']."', '".$_POST['latitude']."', '".$_POST['longitude']."')";
+           $sql = "INSERT INTO users (email, latitude, longitude, created) VALUES ('".$_POST['email']."', '".$_POST['latitude']."', '".$_POST['longitude']."', '".$date."')";
+        
             $insert = $mysqli->query($sql);
 
             if ($insert === TRUE) {
